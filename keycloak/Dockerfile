@@ -1,7 +1,7 @@
-FROM quay.io/keycloak/keycloak:23.0.1 as builder
+FROM keycloak/keycloak:26.0 as builder
 
-ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN_PASSWORD=admin
+ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
+ENV KC_BOOTSTRAP_ADMIN_PASSWORD=admin
 
 WORKDIR /opt/keycloak
 
@@ -10,7 +10,8 @@ RUN /opt/keycloak/bin/kc.sh build
 
 COPY import/ /opt/keycloak/data/import
 
-RUN /opt/keycloak/bin/kc.sh import --dir=/opt/keycloak/data/import/ --override true; exit 0
+RUN /opt/keycloak/bin/kc.sh import --dir=/opt/keycloak/data/import/ --override true
+# ; exit 0
 
 ENV KC_HOSTNAME=localhost
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
