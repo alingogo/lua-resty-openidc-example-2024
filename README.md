@@ -24,7 +24,8 @@ $ docker-compose up -d
 ### Local
 1. Add below in hosts file.
 ```
-127.0.0.1	localhost keycloak
+127.0.0.1	localhost 
+127.0.0.1   keycloak
 ```
 2. Acccess to ``http://localhost`` .
 

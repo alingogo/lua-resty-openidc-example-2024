@@ -13,5 +13,5 @@ COPY import/ /opt/keycloak/data/import
 RUN /opt/keycloak/bin/kc.sh import --dir=/opt/keycloak/data/import/ --override true
 # ; exit 0
 
-ENV KC_HOSTNAME=localhost
+ENV KC_HOSTNAME=keycloak
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
