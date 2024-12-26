@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dependency-injector = "*"
+fastapi = "*"
+pydantic = "*"
+uvicorn = "*"
+pyyaml = "*"
+pydantic_settings = "*"
+python-jose = "*"
+cryptography = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
